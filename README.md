@@ -4,6 +4,12 @@
 
 ## Acceptance Criteria
 
+## Technologies Used
+
+## Challenges Faced
+
 ## Application Screenshots
 
 ## Application Links
+
+## Contributor Github Links
