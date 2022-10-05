@@ -2,10 +2,10 @@ import React from "react";
 import { Switch,Route } from 'react-router-dom';
 //layouts
 import LandingPageLayout from "./layouts/LandingPage";
+//Pages
+import HomePage from './pages/HomePage';
 
-
-
-function App() {
+  const App = () => {
   return (
     // <div>
     // <h1 className="font-bold text-3xl">Tailwind is working</h1>
@@ -13,7 +13,7 @@ function App() {
     <Switch>
       <Route path="/">
         <LandingPageLayout>
-
+          <HomePage />
         </LandingPageLayout>
       </Route>
     </Switch>
