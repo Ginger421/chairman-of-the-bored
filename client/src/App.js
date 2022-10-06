@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes , Route } from 'react-router-dom';
 //layouts
-import LandingPageLayout from "./layouts/landingPage";
+import LandingPageLayout from "./layouts/landingPage"
 //Pages
 import HomePage from './pages/homePage';
 
@@ -9,7 +9,7 @@ import HomePage from './pages/homePage';
   return (
     <Routes>
       <Route path="/">
-        <LandingPageLayout heading="Tailwind CSS">
+        <LandingPageLayout heading="Chairman of the Bored">
           <HomePage />
         </LandingPageLayout>
       </Route>

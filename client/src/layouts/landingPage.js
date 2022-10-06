@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/NavBar';
 //import Hero from './../../assests/her.jpg';
+import Footer from '../components/footer';
 
 const LandingPageLayout = ({
     heading,
@@ -40,7 +41,13 @@ const LandingPageLayout = ({
             </div>
 
 
+            </div>  
+            
+            <div className='w-full max-w-7xl mx-auto'>
+                {otherProps.children}
             </div>
+
+         <Footer />
         </div>
     );
 };
