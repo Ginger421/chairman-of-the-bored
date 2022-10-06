@@ -1,16 +1,23 @@
-// import { searchBored } from "./utils/API";
+import React from "react";
+import { Routes,Route } from 'react-router-dom';
+//layouts
+import LandingPageLayout from "./layouts/LandingPage";
+//Pages
+import HomePage from './pages/HomePage';
 
-function App() {
+  const App = () => {
   return (
-    <div className="App">
-      <h1 className="text-3xl font-bold">Tailwind is up and running</h1>
-    </div>
+    // <div>
+    // <h1 className="font-bold text-3xl">Tailwind is working</h1>
+    // </div>
+    <Routes>
+      <Route path="/">
+        <LandingPageLayout>
+          <HomePage />
+        </LandingPageLayout>
+      </Route>
+    </Routes>
   );
 }
-// searchBored();
-
-// console.log(searchBored())
-
-
 
 export default App;
