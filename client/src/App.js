@@ -1,22 +1,19 @@
 import React from "react";
 import { Routes,Route } from 'react-router-dom';
 //layouts
-import LandingPageLayout from "./layouts/LandingPage";
+import LandingPageLayout from "./layouts/landingPage";
 //Pages
-import HomePage from './pages/HomePage';
+import HomePage from './pages/homePage';
 
   const App = () => {
   return (
-    // <div>
-    // <h1 className="font-bold text-3xl">Tailwind is working</h1>
-    // </div>
-    <Routes>
-      <Route path="/">
-        <LandingPageLayout heading="Tailwind CSS">
+    //<Routes>
+      //<Route path="/">
+        //<LandingPageLayout heading="Tailwind CSS">
           <HomePage />
-        </LandingPageLayout>
-      </Route>
-    </Routes>
+        //</LandingPageLayout>
+      //</Route>
+    //</Routes>
   );
 }
 
