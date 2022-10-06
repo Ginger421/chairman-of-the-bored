@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 //create and import Logo
-import Logo from './../../public/logo192.png'; //has to be inside src folder
+// import Logo from './../../public/logo192.png'; //has to be inside src folder
 import { Link } from 'react-router-dom';
 
 const Header = ({
     ...otherProps
 }) => {
 
-    //
-    const [active, setActive] = useState(false);
+    
+    const [active, setActive] = useState(true);
 
     const onClick = () => {
         setActive(!active);
@@ -21,7 +21,7 @@ const Header = ({
             <div className="max-w-7xl mx auto flex items-center justify-between">
 
             <div className="w-14">
-               <img src= {Logo} className="w-full" /> 
+               {/* <img src= {Logo} className="w-full" />  */}
             </div>
 
             <div className='flex text-white font-sans text-base'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './../../components/NavBar';
+import Header from '../components/NavBar';
 //import Hero from './../../assests/her.jpg';
 
 const LandingPageLayout = ({
@@ -19,7 +19,7 @@ const LandingPageLayout = ({
                 "
 
                 style={{
-                    backgroundImage: `url(${Hero})`
+                    // backgroundImage: `url(${Hero})`
                 }}
                 >
 

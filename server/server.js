@@ -30,6 +30,7 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+console.log(express.urlencoded({ extended: true }));
 
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
