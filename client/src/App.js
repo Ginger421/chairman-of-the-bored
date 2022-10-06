@@ -12,7 +12,7 @@ import HomePage from './pages/HomePage';
     // </div>
     <Routes>
       <Route path="/">
-        <LandingPageLayout>
+        <LandingPageLayout heading="Tailwind CSS">
           <HomePage />
         </LandingPageLayout>
       </Route>
