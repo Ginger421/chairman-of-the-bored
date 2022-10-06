@@ -29,13 +29,17 @@ const Header = ({
             </div>
 
             <div onClick={onClick}>
+                className={`
+                    md:hidden upperCase
+                `}
                 Menu icon goes here  
             </div>
 
             <nav className={`${!active && 'hidden'}
             absolute flex flex-col top-full w-full p-2 left-0 z-20 
             md:static md:w-auto md:flex-col md:flex`}>
-                <ul>
+
+                <ul className="md:flex-row md:flex">
                     <li className='list-none md:m-2'>
                         <Link className='flex w-full text-base hover:text-white cursor-pointer p-1.5'>
                             Login
