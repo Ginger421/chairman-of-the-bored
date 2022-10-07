@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/NavBar";
 //import Hero from './../../assests/her.jpg';
+import Footer from "../components/footer";
 
 const LandingPageLayout = ({ heading, ...otherProps }) => {
   return (
@@ -36,6 +37,7 @@ const LandingPageLayout = ({ heading, ...otherProps }) => {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
