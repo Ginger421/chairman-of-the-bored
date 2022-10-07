@@ -1,61 +1,67 @@
 import React, { useState } from "react";
-//create and import Logo
-// import Logo from './../../public/logo192.png'; //has to be inside src folder
-import { Link } from "react-router-dom";
+import { HiChevronDoubleDown, HiXCircle } from "react-icons/hi";
+import { FcBusinessman } from "react-icons/fc";
+import { NavLink } from "react-router-dom";
 
-const Header = ({ ...otherProps }) => {
+const Header = () => {
   const [active, setActive] = useState(false);
-
-  const onClick = () => {
-    setActive(!active);
-  }; //end onClick()
+  const onClick = () => setActive(!active);
 
   return (
-    <header className="bg-teal-700 relative p-2.5">
-      <div className="max-w-7xl mx auto flex items-center justify-between">
-        <div className="w-14">
-          {/* <img src= {Logo} className="w-full" />  */}
-        </div>
-
-        <div className="flex text-white font-sans text-base">
-          Chairman of the Bored
-        </div>
-
-        <div onClick={onClick}>
-          className=
-          {`
-                    md:hidden upperCase
-                `}
-          Menu icon goes here
-        </div>
-
-        <nav
-          className={`${!active && "hidden"}
-            absolute flex flex-col top-full w-full p-2 left-0 z-20 
-            md:static md:w-auto md:flex-col md:flex`}
-        >
-          <ul className="md:flex-row md:flex">
-            <li className="list-none md:m-2">
-              <Link className="flex w-full text-base hover:text-white cursor-pointer p-1.5">
-                Login
-              </Link>
-            </li>
-
-            <li className="list-none md:m-2">
-              <Link className="flex w-full text-base hover:text-white cursor-pointer p-1.5">
-                Create Account
-              </Link>
-            </li>
-
-            <li className="list-none md:m-2">
-              <Link className="flex w-full text-base hover:text-white cursor-pointer p-1.5">
-                Page About us?
-              </Link>
-            </li>
-          </ul>
-        </nav>
+    <div className="fixed w-full h-[80px] flex justify-between items-center px-6 bg-teal-500 text-white font-bold z-10">
+      <div className="flex text-2xl">
+        Chairman of the Bored
+        <span>
+          <FcBusinessman size={40} className="inline-flex ml-4" />
+        </span>
       </div>
-    </header>
+      <ul className="hidden  md:flex md:space-x-4">
+        <li>
+          <NavLink>Home</NavLink>
+        </li>
+        <li>
+          <NavLink>Login</NavLink>
+        </li>
+        <li>
+          <NavLink>Signup</NavLink>
+        </li>
+        <li>
+          <NavLink>About</NavLink>
+        </li>
+      </ul>
+
+      <div onClick={onClick} className="md:hidden z-100">
+        {!active ? <HiChevronDoubleDown /> : <HiXCircle />}
+      </div>
+      <ul
+        className={
+          !active
+            ? "hidden"
+            : "absolute top-0 left-0 w-full h-screen main flex flex-col justify-center items-center bg-girl bg-auto bg-no-repeat bg-center md:bg-none text-black"
+        }
+      >
+        <li className="py-6 text-4xl">
+          <NavLink onClick={onClick}>
+            Home
+          </NavLink>
+        </li>
+        <li className="py-6 text-4xl">
+          <NavLink onClick={onClick} >
+            Login
+          </NavLink>
+        </li>
+        <li className="py-6 text-4xl">
+          <NavLink onClick={onClick} >
+            Signup
+          </NavLink>
+        </li>
+        <li className="py-6 text-4xl">
+          <NavLink onClick={onClick} >
+            About
+          </NavLink>
+        </li>
+      </ul>
+    </div>
   );
 };
 
