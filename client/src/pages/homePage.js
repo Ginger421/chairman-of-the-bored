@@ -1,13 +1,7 @@
 import React from "react";
 
-const HomePage = ({
-    ...otherProps
-}) => {
-    return (
-        <div>
-           
-        </div>
-    );
+const HomePage = ({ ...otherProps }) => {
+  return <div></div>;
 };
 
 export default HomePage;
