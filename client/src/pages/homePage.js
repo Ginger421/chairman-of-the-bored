@@ -20,10 +20,18 @@ const HomePage = ({ ...otherProps }) => {
               <li class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg">Name</li>
               <li class="px-6 py-2 border-b border-gray-200 w-full">Username</li>
               <li class="px-6 py-2 border-b border-gray-200 w-full">Email</li>
-              <li class="px-6 py-2 border-b border-gray-200 w-full">A fourth item</li>
-              <li class="px-6 py-2 w-full rounded-b-lg">And a fifth one</li>
             </ul>
+          </div> 
+
+          <div class="flex flex-wrap justify-center">
+            <img
+            src=""
+            class="p-1 bg-white border rounded max-w-sm"
+            alt="User's profile picture"
+          />
           </div>
+
+
 
       
         
