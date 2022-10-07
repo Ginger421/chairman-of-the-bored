@@ -22,24 +22,25 @@ const typeDefs = gql`
     key: String
     accessibility: Float
   }
+  type SavedTask {
+    activity: String
+    type: String
+    participants: Int
+    price: Int
+    link: String
+    key: String
+    accessibility: Float
+  }
   type Query {
     theBored: User
   }
-    type Mutation {
-        addUser(username: String!, email: String!, password: String!): Auth
-        login(email: String!, password: String!): Auth
-        saveTask(
-            activity: String!
-            type: String!
-            participants: Int!
-            price: Int!
-            link: String!
-            key: String!
-            accessibility: Float!
-        ): User
-        removeTask(activity: String!): User
 
-    }
+  type Mutation {
+    addUser(username: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    saveTask(input: SavedTask): User
+    removeTask(key: String!): User
+  }
 `;
 
 module.exports = typeDefs;
