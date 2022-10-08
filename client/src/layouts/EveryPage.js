@@ -7,7 +7,7 @@ const EveryPageLayout = ({children}) => {
   return (
     <div className="flex flex-col EveryPageLayout w-full">
       <Header/>
-      <div className="flex flex-col">
+      <div className="flex flex-col h-screen">
         {children}
       </div>
       <Footer/>

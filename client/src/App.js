@@ -4,7 +4,6 @@ import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/homePage";
 import AboutPage from "./pages/aboutPage"
 import ProfilePage from "./pages/profilePage"
-import Header from "./components/NavBar";
 
 const App = () => {
   return (
