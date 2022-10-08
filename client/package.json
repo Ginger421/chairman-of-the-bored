@@ -23,13 +23,8 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-<<<<<<< HEAD
     "extends": 
       "react-app"
-
-=======
-    "extends": "react-app"
->>>>>>> f70b6447f6d10fd6dac0852b1338cb553eb41055
   },
   "browserslist": {
     "production": [

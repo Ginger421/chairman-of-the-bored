@@ -3,7 +3,7 @@ import Greeting from "../components/greeting";
 import BoredApi from "../components/RandomActivity";
 import EveryPageLayout from "../layouts/EveryPage";
 
-const HomePage = () => {
+const HomePageLayout = () => {
   return (
     <EveryPageLayout>
       <div className="flex flex-col">
@@ -14,8 +14,4 @@ const HomePage = () => {
   )
 };
 
-
-HomePageLayout.defaultProps = {
-  heading: "",
-};
 export default HomePageLayout;
