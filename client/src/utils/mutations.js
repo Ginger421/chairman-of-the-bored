@@ -26,22 +26,23 @@ export const ADD_USER = gql`
 `;
 
 export const SAVE_TASK = gql`
-    mutation saveTask($input: SavedTask) {``saveTask(input: $input) {
-            _id
-            username
-            email
-            savedTasks {
-                activity
-                type
-                participants
-                price
-                link
-                key
-                accessibility
-                }
-                }
-                }
-                `;
+  mutation saveTask($input: SavedTaskChoice) {
+    saveTask(input: $input) {
+      _id
+      username
+      email
+      savedTasks {
+        activity
+        type
+        participants
+        price
+        link
+        key
+        accessibility
+      }
+    }
+  }
+`;
 
 export const REMOVE_TASK = gql`
   mutation removeTask($key: String!) {

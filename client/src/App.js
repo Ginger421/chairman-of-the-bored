@@ -6,6 +6,7 @@ import LandingPageLayout from "./layouts/landingPage";
 //Pages
 import HomePage from "./pages/homePage";
 
+
 const App = () => {
   return (
     <Router>
