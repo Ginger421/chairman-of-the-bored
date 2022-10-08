@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <div className="content-start flex flex-col h-[80px]">
       {showModal && <Modal onShowModal={modalHandler} />}
-      <div className="fixed w-full h-[80px] flex justify-between items-center px-6 bg-teal-500 text-white font-bold z-10">
+      <div className="fixed w-full h-[80px] flex justify-between items-center px-6 bg-rose-700 text-white font-bold z-10">
         <div className="flex text-2xl">
           Chairman of the Bored
           <span>
