@@ -7,7 +7,7 @@ const LandingPageLayout = ({ heading, ...otherProps }) => {
   return (
     <div className="min-h-full bg-gray-100 font-body">
       <div className="h-screen flex flex-col ">
-        <Header />
+       
 
         <div
           className="
