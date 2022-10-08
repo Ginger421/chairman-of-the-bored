@@ -14,4 +14,8 @@ const HomePage = () => {
   )
 };
 
-export default HomePage;
+
+HomePageLayout.defaultProps = {
+  heading: "",
+};
+export default HomePageLayout;
