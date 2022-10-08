@@ -3,7 +3,6 @@ import EveryPageLayout from "../layouts/EveryPage"
 const ProfilePage = () => {
     return(
     <EveryPageLayout>
-      //wrapper for the whole page
       <div className="min-h-full bg-gray-100 font-body">  
           <div className="
             relative flex item-center justify-center h-full
@@ -28,7 +27,7 @@ const ProfilePage = () => {
             </div>        
           
           </div>
-      </div> //end wrapper for the whole page
+      </div> 
       </EveryPageLayout>
     ) }
 

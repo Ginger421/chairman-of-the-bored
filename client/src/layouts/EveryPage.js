@@ -5,9 +5,9 @@ import Header from "../components/NavBar";
 
 const EveryPageLayout = ({children}) => {
   return (
-    <div className="flex flex-col LandingPageLayout">
+    <div className="flex flex-col LandingPageLayout w-full">
       <Header/>
-      <div className="flex container">
+      <div className="flex flex-col">
         {children}
       </div>
       <Footer/>

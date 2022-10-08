@@ -3,15 +3,15 @@ import Greeting from "../components/greeting";
 import BoredApi from "../components/RandomActivity";
 import EveryPageLayout from "../layouts/EveryPage";
 
-const HomePageLayout = () => {
+const HomePage = () => {
   return (
     <EveryPageLayout>
-      <div className="flex flex-col">
+      
       <Greeting/>
       <BoredApi/>
-      </div>
+      
     </EveryPageLayout>
   )
 };
 
-export default HomePageLayout;
+export default HomePage;

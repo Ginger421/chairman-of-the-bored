@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <div className="content-start flex flex-col h-20">
       {showModal && <Modal onShowModal={modalHandler} />}
       <div className="fixed w-full h-[80px] flex justify-between items-center px-6 bg-teal-500 text-white font-bold z-10">
         <div className="flex text-2xl">
@@ -47,7 +47,7 @@ const Header = () => {
           className={
             !active
               ? "hidden"
-              : "absolute top-0 left-0 w-full h-screen main flex flex-col justify-center items-center bg-girl bg-auto bg-no-repeat bg-center md:bg-none text-black"
+              : "w-full h-screen main flex flex-col justify-center items-center bg-girl bg-auto bg-no-repeat bg-center md:bg-none text-black"
           }
         >
           <li className="py-6 text-4xl">

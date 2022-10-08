@@ -9,7 +9,7 @@ const Modal = (props) => {
 
   const LoginForm = () => {
     return (
-      <div>
+      <div className="flex flex-col justify-center">
         <div className="flex items-center justify-center md:z-100 min-h-screen bg-rose-50">
           <form action="">
             <div className="relative flex flex-col m-6 space-y-10 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:m-0">
