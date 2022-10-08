@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import Footer from "../components/footer";
 import Header from "../components/NavBar";
 //import Hero from './../../assests/her.jpg';
