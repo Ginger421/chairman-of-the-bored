@@ -3,7 +3,7 @@ import Header from "../components/NavBar";
 //import Hero from './../../assests/her.jpg';
 import Footer from "../components/footer";
 
-const HomePageLayout = ({ ...otherProps }) => {
+const HomePageLayout = ({ heading, ...otherProps }) => {
   return(
 
     //wrapper for the whole page
@@ -46,7 +46,7 @@ const HomePageLayout = ({ ...otherProps }) => {
 };
 
 
-HomePage.defaultProps = {
+HomePageLayout.defaultProps = {
   heading: "",
 };
 export default HomePageLayout;
