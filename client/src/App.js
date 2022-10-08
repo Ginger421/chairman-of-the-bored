@@ -4,7 +4,7 @@ import Header from "./components/NavBar";
 //layouts
 import LandingPageLayout from "./layouts/landingPage";
 //Pages
-import HomePage from "./pages/homePage";
+import HomePageLayout from "./pages/homePage";
 
 const App = () => {
   return (
@@ -12,6 +12,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<LandingPageLayout />} />
+        <Route path="/" element={<HomePageLayout/>} />
       </Routes>
     </Router>
   );
