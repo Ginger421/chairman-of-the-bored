@@ -46,7 +46,7 @@ const HomePageLayout = ({ ...otherProps }) => {
 };
 
 
-HomePage.defaultProps = {
+HomePageLayout.defaultProps = {
   heading: "",
 };
 export default HomePageLayout;
