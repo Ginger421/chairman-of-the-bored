@@ -8,7 +8,7 @@ const Header = () => {
   const onClick = () => setActive(!active);
 
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-6 bg-teal-500 text-white font-bold z-10">
+    <div className="w-full h-[80px] flex justify-between items-center px-6 bg-teal-500 text-white font-bold z-10 container items-end">
       <div className="flex text-2xl">
         Chairman of the Bored
         <span>
