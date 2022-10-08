@@ -3,12 +3,11 @@ import Header from "../components/NavBar";
 //import Hero from './../../assests/her.jpg';
 import Footer from "../components/footer";
 
+
 const LandingPageLayout = ({ heading, ...otherProps }) => {
   return (
     <div className="min-h-full bg-gray-100 font-body">
       <div className="h-screen flex flex-col ">
-       
-
         <div
           className="
                     relative flex item-center justify-center h-full
@@ -37,6 +36,7 @@ const LandingPageLayout = ({ heading, ...otherProps }) => {
           />
         </div>
       </div>
+     
       <Footer />
     </div>
   );

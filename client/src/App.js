@@ -6,13 +6,14 @@ import LandingPageLayout from "./layouts/landingPage";
 //Pages
 import HomePageLayout from "./pages/homePage";
 
+
 const App = () => {
   return (
     <Router>
       <Header />
       <Routes>
         <Route path="/" element={<LandingPageLayout />} />
-        <Route path="/" element={<HomePageLayout/>} />
+        <Route path="/" element={<HomePageLayout />} />
       </Routes>
     </Router>
   );
