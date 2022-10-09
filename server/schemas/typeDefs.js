@@ -5,7 +5,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    taskCount: Int
+    password: String
     savedTasks: [Task]
   }
   type Auth {
@@ -22,11 +22,7 @@ const typeDefs = gql`
     key: String
     accessibility: Float
   }
-<<<<<<< HEAD
-  type SavedTask {
-=======
-  type SavedTaskChoice {
->>>>>>> b82a3084635ec92eb85b5031655536c8cc0c4c62
+  input SavedTaskInput {
     activity: String
     type: String
     participants: Int
@@ -42,11 +38,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-<<<<<<< HEAD
-    saveTask(input: SavedTask): User
-=======
-    saveTask(input: SavedTaskChoice): User
->>>>>>> b82a3084635ec92eb85b5031655536c8cc0c4c62
+    saveTask(input: SavedTaskInput): User
     removeTask(key: String!): User
   }
 `;

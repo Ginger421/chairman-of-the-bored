@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { HiChevronDoubleDown, HiXCircle } from "react-icons/hi";
 import { FcBusinessman } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
-// import Login from './Sandbox'
-import Modal from "./Modal";
+import LoginModal from "./LoginModal";
+import RegisterModal from "./RegisterModal";
 
 const Header = () => {
+  const [isLogin, setIsLogin] = useState(true);
   const [active, setActive] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -15,9 +16,24 @@ const Header = () => {
     setShowModal(null);
   };
 
+  const ModalSwitchHandler = () => {
+    setIsLogin(!isLogin);
+  };
+
   return (
     <div>
-      {showModal && <Modal onShowModal={modalHandler} />}
+      {showModal &&
+        (isLogin ? (
+          <LoginModal
+            onShowModal={modalHandler}
+            SwitchModal={ModalSwitchHandler}
+          />
+        ) : (
+          <RegisterModal
+            onShowModal={modalHandler}
+            SwitchModal={ModalSwitchHandler}
+          />
+        ))}
       <div className="fixed w-full h-[80px] flex justify-between items-center px-6 bg-teal-500 text-white font-bold z-10">
         <div className="flex text-2xl">
           Chairman of the Bored
@@ -47,7 +63,7 @@ const Header = () => {
           className={
             !active
               ? "hidden"
-              : "absolute top-0 left-0 w-full h-screen main flex flex-col justify-center items-center bg-girl bg-auto bg-no-repeat bg-center md:bg-none text-black"
+              : "w-full h-screen main flex flex-col justify-center items-center bg-girl bg-auto bg-no-repeat bg-center md:bg-none text-black"
           }
         >
           <li className="py-6 text-4xl">

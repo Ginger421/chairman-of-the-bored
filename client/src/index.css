@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 
 @layer base {
-  body {
-    @apply font-[Racing];
+  html {
+    font-family: 'Permanent Marker', cursive;
   }
 }

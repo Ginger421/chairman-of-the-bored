@@ -6,7 +6,8 @@ export const LOGIN_USER = gql`
       token
       user {
         _id
-        username
+        email
+        password
       }
     }
   }
@@ -20,13 +21,14 @@ export const ADD_USER = gql`
         _id
         username
         email
+        password
       }
     }
   }
 `;
 
 export const SAVE_TASK = gql`
-  mutation saveTask($input: SavedTaskChoice) {
+  mutation saveTask($input: SavedTaskInput) {
     saveTask(input: $input) {
       _id
       username
