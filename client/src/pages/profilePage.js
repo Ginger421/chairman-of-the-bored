@@ -3,11 +3,12 @@ import EveryPageLayout from "../layouts/EveryPage"
 const ProfilePage = () => {
     return(
     <EveryPageLayout>
-      <div className="min-h-full bg-gray-100 font-body">  
+      
+      <div className="min-h-full bg-gray-100 font-body flex">  
           <div className="
             relative flex item-center justify-center h-full
             bg-cover bg-center bg-fixed bg-no-repeat
-          ">
+          "> 
   
             <div class="flex flex-wrap justify-center">
               <img
