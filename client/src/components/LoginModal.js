@@ -77,7 +77,7 @@ const LoginModal = (props) => {
               <div className="flex flex-col items-center justify-between mt-6 space-y-6 md:flex-row md:space-y-0">
                 <div
                   className="font-thin text-cyan-700 cursor-pointer"
-                  // onClick={props.SwitchModal}
+                  onClick={props.SwitchModal}
                 >
                   Sign Up
                 </div>
