@@ -63,7 +63,7 @@ const Header = () => {
           className={
             !active
               ? "hidden"
-              : "w-full h-screen main flex flex-col justify-center items-center bg-girl bg-auto bg-no-repeat bg-center md:bg-none text-black"
+              : "w-full h-screen main flex flex-col md:hidden justify-center items-center bg-girl bg-auto bg-no-repeat bg-center md:bg-none text-black"
           }
         >
           <li className="py-6 text-4xl">
