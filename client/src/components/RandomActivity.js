@@ -8,7 +8,7 @@ const BoredApi = () => {
 
                 <h1 className='flex p-10'>What are you going to do today? </h1>
             
-                <button className='bg-yellow-500 h-10 animate-bounce shadow-2xl rounded-lg p-4 flex items-center'>RANDOM</button>
+                <button className='bg-yellow-300 h-10 animate-bounce shadow-2xl rounded-lg p-4 flex items-center'>RANDOM</button>
 
             </div>
         </div>
