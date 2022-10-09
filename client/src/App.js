@@ -5,6 +5,7 @@ import HomePage from "./pages/homePage";
 import AboutPage from "./pages/aboutPage"
 import ProfilePage from "./pages/profilePage"
 
+
 const App = () => {
   return (
     <Router>
