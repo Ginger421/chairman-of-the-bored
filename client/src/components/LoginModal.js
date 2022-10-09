@@ -44,7 +44,7 @@ const LoginModal = (props) => {
 // noValidate validated={validated} onSubmit={handleSubmit}
   return (
     <div>
-      <div className="flex items-center justify-center md:z-100 min-h-screen bg-rose-50">
+      <div className="flex items-center justify-center md:z-100 min-h-screen bg-sky-300">
         <form >
           <div className="relative flex flex-col m-6 space-y-10 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:m-0">
             {/* left side */}
@@ -107,7 +107,7 @@ const LoginModal = (props) => {
             </div>
 
             {/* right side  */}
-            <img src={Chairman} alt="" className="w-[430px] hidden md:block" />
+            <img src={Chairman} alt="" className="w-[430px] hidden md:block rounded-2xl" />
             {/* Close button */}
             <div className="group absolute -top-5 right-4 md:top-4 hover:cursor-pointer hover:-translate-y-0.5 transition duration-150">
               <FaWindowClose

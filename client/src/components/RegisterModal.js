@@ -7,7 +7,7 @@ import StartUp from "../assets/startup.png";
 const RegisterModal = (props) => {
       return (
         <div>
-          <div className="flex items-center justify-center md:z-100 min-h-screen bg-rose-50">
+          <div className="flex items-center justify-center md:z-100 min-h-screen bg-sky-300">
             <form action="">
               {/* card container */}
               <div className="relative flex flex-col m-6 space-y-10 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:m-0">
@@ -71,7 +71,7 @@ const RegisterModal = (props) => {
                 <img
                   src={StartUp}
                   alt=""
-                  className="w-[430px] hidden md:block"
+                  className="w-[430px] hidden md:block rounded-2xl"
                 />
                 {/* Close button */}
                 <div className="group absolute -top-5 right-4 md:top-4 hover:cursor-pointer hover:-translate-y-0.5 transition duration-150">
