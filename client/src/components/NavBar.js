@@ -43,13 +43,16 @@ const Header = () => {
         </div>
         <ul className="hidden  md:flex md:space-x-4 text-rose-600">
           <li>
-            <NavLink>Home</NavLink>
+            <NavLink to="/" onClick={onClick}>Home</NavLink>
           </li>
           <li>
             <NavLink onClick={() => setShowModal(true)}>Login/Signup</NavLink>
           </li>
           <li>
-            <NavLink>About</NavLink>
+            <NavLink to="/leaderboard" onClick={onclick}>Leaderboard</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" onClick={onClick}>About</NavLink>
           </li>
         </ul>
 
@@ -64,13 +67,16 @@ const Header = () => {
           }>
         <ul className="flex flex-col items-center">
           <li className="py-6 text-4xl">
-            <NavLink onClick={onClick}>Home</NavLink>
+            <NavLink to="/" onClick={onClick}>Home</NavLink>
           </li>
           <li className="py-6 text-4xl">
             <NavLink onClick={() => setShowModal(true)}>Login/Signup</NavLink>
           </li>
           <li className="py-6 text-4xl">
-            <NavLink onClick={onClick}>About</NavLink>
+            <NavLink to="/leaderboard" onClick={onclick}>Leaderboard</NavLink>
+          </li>
+          <li className="py-6 text-4xl">
+            <NavLink to="/about" onClick={onClick}>About</NavLink>
           </li>
         </ul>
         </div>
