@@ -37,7 +37,7 @@ const BoredApi = (props) => {
         )
     } else {
         return (
-            <UserApi/>
+            <GenericApi/>
         )
     }
 }
