@@ -43,7 +43,7 @@ const LoginModal = (props) => {
   // this goes in the form tag below
 // noValidate validated={validated} onSubmit={handleSubmit}
   return (
-    <div className="z-20">
+    <div className="z-40">
       <div className="flex items-center justify-center md:z-100 min-h-screen bg-sky-300/60">
         <form >
           <div className="relative flex flex-col m-6 space-y-10 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:m-0">

@@ -35,7 +35,7 @@ const Header = () => {
           />
         ))}
       <div className="fixed w-full h-[80px] flex justify-between items-center px-6 bg-yellow-300 text-white font-bold z-20">
-        <div className="flex text-2xl text-rose-600">
+        <div className="flex text-2xl text-rose-600 text-center">
           Chairman of the Bored
           <span>
             <FcBusinessman size={40} className="inline-flex ml-4" />

@@ -6,7 +6,7 @@ import StartUp from "../assets/startup.png";
 
 const RegisterModal = (props) => {
       return (
-        <div className="z-20">
+        <div className="z-40">
           <div className="flex items-center justify-center md:z-100 min-h-screen bg-sky-300/60">
             <form action="">
               {/* card container */}
