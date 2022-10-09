@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LeaderBoard = (){
+const LeaderBoard = () => {
     return (
         <div></div>
     )
