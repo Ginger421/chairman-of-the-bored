@@ -3,7 +3,7 @@ import React from 'react';
 const BoredApi = () => {
 
     return (
-        <div className='flex justify-center items-center content-center h-screen'>
+        <div className='z-10 flex justify-center items-center content-center h-screen'>
             <div className='flex flex-col bg-sky-400 justify-center items-center h-96 max-w-lg w-full animate-pulse rounded-lg'>
 
                 <h1 className='flex p-10 text-4xl text-center'>What are you going to do today? </h1>
