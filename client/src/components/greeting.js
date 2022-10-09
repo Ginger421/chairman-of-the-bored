@@ -1,3 +1,5 @@
+import React from 'react'
+
 const UserGreeting = (props) => {
     return <div className=" flex justify-center font-black text-white bg-rose-700/60"><h1>You're Bored again?! So are we, find your next activity! </h1></div>
 }
