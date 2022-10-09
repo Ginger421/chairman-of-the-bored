@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "apollo-server": "^3.10.3",
+    "apollo-server-express": "^3.10.3",
     "autoprefixer": "^10.4.12",
     "graphql": "^16.6.0",
     "install": "^0.13.0",
@@ -23,8 +25,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": 
-      "react-app"
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [

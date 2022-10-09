@@ -1,5 +1,6 @@
-const { Schema } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
+// ///////////////Activity Schema IS NOT BEING REQUIRED ANYWHERE AS OF 10/8, It is only set up  to mirror the api at the moment/////////////////////
 const activitySchema = new Schema({
   // this is the key for the activity in the API response
   key: {
@@ -28,4 +29,4 @@ const activitySchema = new Schema({
   },
 });
 
-module.exports = activitySchema;
+module.exports = model("Activity", activitySchema);
