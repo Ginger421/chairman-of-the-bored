@@ -6,7 +6,7 @@ import EveryPageLayout from "../layouts/EveryPage";
 const HomePage = () => {
   return (
     <EveryPageLayout>
-      <div className="flex flex-col h-screen bg-girl bg-cover">
+      <div className="flex flex-col h-screen bg-girl bg-cover bg-center">
       <Greeting/>
       <BoredApi/>
       </div>
