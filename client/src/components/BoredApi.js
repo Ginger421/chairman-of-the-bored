@@ -7,7 +7,7 @@ const UserApi = (props) => {
 
                 <h1 className='flex p-10 text-4xl text-center'>What are you going to do today? </h1>
             
-                <button className='bg-yellow-300 h-10 animate-bounce shadow-2xl rounded-lg p-4 flex items-center'>RANDOM</button>
+                <button className='bg-yellow-300 h-10 animate-bounce shadow-2xl rounded-lg p-4 flex items-center hover:text-sky-400'>Tell Me!</button>
 
             </div>
         </div>
@@ -21,7 +21,7 @@ const GenericApi = (props) => {
 
                 <h1 className='flex p-10 text-4xl text-center'>What are you going to do today? </h1>
             
-                <button className='bg-yellow-300 h-10 animate-bounce shadow-2xl rounded-lg p-4 flex items-center'>RANDOM</button>
+                <button className='bg-yellow-300 h-10 animate-bounce shadow-2xl rounded-lg p-4 flex items-center hover:text-sky-400'>Tell Me!</button>
 
             </div>
         </div>
