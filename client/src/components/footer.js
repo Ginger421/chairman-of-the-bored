@@ -4,7 +4,7 @@ const Footer = ({
     ...otherProps
 }) => {
     return (
-        <footer className='bg-fuchsia-700'>
+        <footer className='bg-sky-500 flex content-end'>
             <div className='w-full max-w-7xl mx-auto p-0.5 text-center'>
                <span className='text-base text-white'>
                 Chairman of the Bored 2022
