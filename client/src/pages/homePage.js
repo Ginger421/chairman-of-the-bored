@@ -11,7 +11,7 @@ const HomePage = () => {
         <div className="flex flex-col">
           <Greeting/>
         </div>
-        <div className="flex flex-col p-8">
+        <div className="flex flex-col p-10">
           <BoredApi/>
         </div>
         <div className="flex flex-col p-8">
