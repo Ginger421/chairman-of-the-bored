@@ -8,6 +8,7 @@ module.exports = {
         'main' : "url(../src/assets/main-background.jpg)",
         'about' : "url(../src/assets/about-background.jpg)",
         'leaderboard' : "url(../src/assets/leaderboard.jpg)",
+        'profile' : "url(../src/assets/profile-background.jpg)",
       },
     },
   },
