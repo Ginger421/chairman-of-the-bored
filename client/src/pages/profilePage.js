@@ -1,4 +1,6 @@
 import EveryPageLayout from "../layouts/EveryPage"
+import AccountInfo from "../components/AccountInfo"
+import AccountSummary from "../components/AccountSummary"
 
 const ProfilePage = () => {
     return(
@@ -9,11 +11,8 @@ const ProfilePage = () => {
             flex flex-col h-full justify-start
             bg-cover bg-center bg-fixed bg-no-repeat
           "> 
-  
-      
-
-          <div className="flex justify-end ">
-          </div>
+          <AccountInfo />
+          <AccountSummary />
           </div>
       </div> 
       </EveryPageLayout>

@@ -2,7 +2,7 @@ import React from "react";
 
 const AccountInfo = () => {
     return (
-        <div>
+        <div className="flex flex-col space-y-4">
         <h3 className="font-medium leading-tight text-3xl mt-0 mb-2 text-blue-600">Account Information</h3>
         <div className="flex flex-wrap justify-center">
           <img
@@ -21,3 +21,5 @@ const AccountInfo = () => {
     
     )
 }
+
+export default AccountInfo;
