@@ -48,6 +48,7 @@ const typeDefs = gql`
 
   type Mutation {
     registerUser(registerInput: RegisterInput): User
+    # this will look at user.token in resolvers.js to see if it is valid
     loginUser(loginUser: LoginInput ): User
     saveTask(input: SavedTaskInput): User
     removeTask(key: String!): User
