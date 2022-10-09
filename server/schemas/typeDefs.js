@@ -2,16 +2,26 @@ const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
-    _id: ID
+    # _id: ID
     username: String
     email: String
     password: String
     savedTasks: [Task]
+    token: String
   }
-  type Auth {
-    token: ID!
-    user: User
+  input RegisterInput {
+    username: String!
+    email: String!
+    password: String!
   }
+  input LoginInput {
+    email: String!
+    password: String!
+  }
+  # type Auth {
+  #   token: ID!
+  #   user: User
+  # }
 
   type Task {
     activity: String
@@ -32,12 +42,13 @@ const typeDefs = gql`
     accessibility: Float
   }
   type Query {
-    theBored: User
+    # get user by id and populate savedTasks?
+    user(id: ID!): User
   }
 
   type Mutation {
-    addUser(username: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
+    registerUser(registerInput: RegisterInput): User
+    loginUser(loginUser: LoginInput ): User
     saveTask(input: SavedTaskInput): User
     removeTask(key: String!): User
   }
