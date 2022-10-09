@@ -5,7 +5,7 @@ const LeaderBoard = (props) => {
     //import user data (and sort by points) from db. Do foreach statement 
 
     return (
-        <div className='flex bg-yellow-300 p-8 rounded-xl'>
+        <div className='flex flex-col space-y-4 bg-yellow-300 p-8 rounded-xl'>
             <table className='table-fixed w-6/12'>
                 <thead>
                     <tr>

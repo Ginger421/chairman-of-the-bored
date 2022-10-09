@@ -7,10 +7,16 @@ import LeaderBoard from "../components/LeaderBoard";
 const HomePage = () => {
   return (
     <EveryPageLayout>
-      <div className="flex flex-col h-screen bg-girl bg-cover bg-center">
-      <Greeting/>
-      <BoredApi/>
-      <LeaderBoard/>
+      <div className="flex flex-col bg-girl bg-cover bg-center h-screen">
+        <div className="flex flex-col">
+          <Greeting/>
+        </div>
+        <div className="flex flex-col p-8">
+          <BoredApi/>
+        </div>
+        <div className="flex flex-col p-8">
+          <LeaderBoard/>
+        </div>
       </div>
     </EveryPageLayout>
   )
