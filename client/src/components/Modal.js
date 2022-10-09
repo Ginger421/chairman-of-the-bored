@@ -10,7 +10,7 @@ const Modal = (props) => {
   const LoginForm = () => {
     return (
       <div className="flex flex-col justify-center">
-        <div className="flex items-center justify-center md:z-100 min-h-screen bg-rose-50">
+        <div className="flex items-center justify-center md:z-20 min-h-screen bg-sky-500/70">
           <form action="">
             <div className="relative flex flex-col m-6 space-y-10 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:m-0">
               {/* left side */}
@@ -88,10 +88,10 @@ const Modal = (props) => {
   const RegisterForm = () => {
     return (
       <div>
-        <div className="flex items-center justify-center md:z-100 min-h-screen bg-rose-50">
+        <div className="flex items-center justify-center md:z-20 min-h-screen bg-sky-500/70 ">
           <form action="">
             {/* card container */}
-            <div className="relative flex flex-col m-6 space-y-10 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:m-0">
+            <div className="relative flex flex-col m-6 space-y-10 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:m-0 z-20">
               {/* left side */}
               <div className="p-6 md-20">
                 {/* top content */}

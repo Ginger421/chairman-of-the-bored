@@ -40,16 +40,16 @@ const Header = () => {
           </li>
         </ul>
 
-        <div onClick={onClick} className="md:hidden z-100">
+        <div onClick={onClick} className="md:hidden z-auto">
           {!active ? <HiChevronDoubleDown /> : <HiXCircle />}
         </div>
-        <ul
-          className={
+
+        <div className={
             !active
               ? "hidden"
-              : "w-full h-screen main flex flex-col justify-center items-center bg-girl bg-auto bg-no-repeat bg-center md:bg-none text-black"
-          }
-        >
+              : "w-full h-screen main flex flex-col justify-center items-center bg-girl bg-auto bg-no-repeat bg-center md:bg-none text-black isolate"
+          }>
+        <ul>
           <li className="py-6 text-4xl">
             <NavLink onClick={onClick}>Home</NavLink>
           </li>
@@ -62,7 +62,7 @@ const Header = () => {
           <li className="py-6 text-4xl">
             <NavLink onClick={onClick}>About</NavLink>
           </li>
-        </ul>
+        </ul></div>
       </div>
     </div>
   );
