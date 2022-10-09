@@ -6,6 +6,6 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bored", {
   useUnifiedTopology: true,
 }
 );
-console.log(`Connected to MongoDB!`.cyan.underline.bold);
+console.log(`Connected to MongoDB!`.cyan.underline.bold)
 
 module.exports = mongoose.connection;
