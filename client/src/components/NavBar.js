@@ -45,7 +45,7 @@ const Header = () => {
           <li>
             <NavLink to="/" onClick={onClick}>Home</NavLink>
           </li>
-          <li>
+          <li className="transition duration-300 ease-in-out">
             <NavLink onClick={() => setShowModal(true)}>Login/Signup</NavLink>
           </li>
           <li>
