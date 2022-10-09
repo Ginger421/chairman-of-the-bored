@@ -34,7 +34,7 @@ const Header = () => {
             SwitchModal={ModalSwitchHandler}
           />
         ))}
-      <div className="fixed w-full h-[80px] flex justify-between items-center px-6 bg-yellow-300 text-white font-bold z-10">
+      <div className="fixed w-full h-[80px] flex justify-between items-center px-6 bg-yellow-300 text-white font-bold z-20">
         <div className="flex text-2xl text-rose-600">
           Chairman of the Bored
           <span>
@@ -46,10 +46,7 @@ const Header = () => {
             <NavLink>Home</NavLink>
           </li>
           <li>
-            <NavLink onClick={() => setShowModal(true)}>Login</NavLink>
-          </li>
-          <li>
-            <NavLink>Signup</NavLink>
+            <NavLink onClick={() => setShowModal(true)}>Login/Signup</NavLink>
           </li>
           <li>
             <NavLink>About</NavLink>
@@ -63,17 +60,14 @@ const Header = () => {
         <div className={
             !active
               ? "hidden"
-              : "w-full h-screen main flex flex-col md:hidden justify-center items-center bg-girl bg-cover bg-no-repeat bg-center md:bg-none text-black absolute inset-0"
+              : "w-full h-screen main flex flex-col md:hidden justify-center items-center bg-girl bg-cover bg-no-repeat bg-center md:bg-none text-black absolute inset-0 z-30"
           }>
-        <ul>
+        <ul className="flex flex-col items-center">
           <li className="py-6 text-4xl">
             <NavLink onClick={onClick}>Home</NavLink>
           </li>
           <li className="py-6 text-4xl">
-            <NavLink onClick={() => setShowModal(true)}>Login</NavLink>
-          </li>
-          <li className="py-6 text-4xl">
-            <NavLink onClick={onClick}>Signup</NavLink>
+            <NavLink onClick={() => setShowModal(true)}>Login/Signup</NavLink>
           </li>
           <li className="py-6 text-4xl">
             <NavLink onClick={onClick}>About</NavLink>
