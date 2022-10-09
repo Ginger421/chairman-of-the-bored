@@ -65,7 +65,6 @@ const Header = () => {
               ? "hidden"
               : "w-full h-screen main flex flex-col md:hidden justify-center items-center bg-girl bg-auto bg-no-repeat bg-center md:bg-none text-black"
           }>
-        </div>
         <ul>
           <li className="py-6 text-4xl">
             <NavLink onClick={onClick}>Home</NavLink>
@@ -79,7 +78,8 @@ const Header = () => {
           <li className="py-6 text-4xl">
             <NavLink onClick={onClick}>About</NavLink>
           </li>
-        </ul></div>
+        </ul>
+        </div>
       </div>
     </div>
   );
