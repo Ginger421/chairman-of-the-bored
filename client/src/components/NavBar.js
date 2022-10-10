@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../context/authContext";
+import { useNavigate } from "react-router-dom";
 import { HiChevronDoubleDown, HiXCircle } from "react-icons/hi";
 import { FcBusinessman } from "react-icons/fc";
 import { NavLink } from "react-router-dom";
@@ -9,6 +11,8 @@ const Header = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [active, setActive] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const { user, logout } = useContext(AuthContext);
+  let navigate = useNavigate();
 
   const onClick = () => setActive(!active);
 
@@ -18,6 +22,11 @@ const Header = () => {
 
   const ModalSwitchHandler = () => {
     setIsLogin(!isLogin);
+  };
+
+  const userLogout = () => {
+    logout();
+    navigate("/");
   };
 
   return (
@@ -43,42 +52,69 @@ const Header = () => {
         </div>
         <ul className="hidden  md:flex md:space-x-4 text-rose-600">
           <li className="hover:text-sky-400">
-            <NavLink to="/" onClick={onClick}>Home</NavLink>
+            <NavLink to="/" onClick={onClick}>
+              Home
+            </NavLink>
           </li>
-          <li className="hover:text-sky-400">
+
+          {user ? (
+            <NavLink onClick={userLogout}>Logout</NavLink>
+          ) : (
             <NavLink onClick={() => setShowModal(true)}>Login/Signup</NavLink>
+          )}
+
+          <li className="hover:text-sky-400">
+            <NavLink to="/leaderboard" onClick={onclick}>
+              Leaderboard
+            </NavLink>
           </li>
           <li className="hover:text-sky-400">
-            <NavLink to="/leaderboard" onClick={onclick}>Leaderboard</NavLink>
-          </li>
-          <li className="hover:text-sky-400">
-            <NavLink to="/about" onClick={onClick}>About</NavLink>
+            <NavLink to="/about" onClick={onClick}>
+              About
+            </NavLink>
           </li>
         </ul>
 
-        <div onClick={onClick} className="md:hidden text-rose-600 hover:text-sky-400">
+        <div
+          onClick={onClick}
+          className="md:hidden text-rose-600 hover:text-sky-400"
+        >
           {!active ? <HiChevronDoubleDown /> : <HiXCircle />}
         </div>
 
-        <div className={
+        <div
+          className={
             !active
               ? "hidden"
               : "w-full h-screen main flex flex-col md:hidden justify-center items-center bg-girl bg-cover bg-no-repeat bg-center md:bg-none text-black absolute inset-0 z-30"
-          }>
-        <ul className="flex flex-col items-center">
-          <li className="py-6 text-4xl hover:text-sky-400">
-            <NavLink to="/" onClick={onClick}>Home</NavLink>
-          </li>
-          <li className="py-6 text-4xl hover:text-sky-400">
-            <NavLink onClick={() => setShowModal(true)}>Login/Signup</NavLink>
-          </li>
-          <li className="py-6 text-4xl hover:text-sky-400">
-            <NavLink to="/leaderboard" onClick={onclick}>Leaderboard</NavLink>
-          </li>
-          <li className="py-6 text-4xl hover:text-sky-400">
-            <NavLink to="/about" onClick={onClick}>About</NavLink>
-          </li>
-        </ul>
+          }
+        >
+          <ul className="flex flex-col items-center">
+            <li className="py-6 text-4xl hover:text-sky-400">
+              <NavLink to="/" onClick={onClick}>
+                Home
+              </NavLink>
+            </li>
+            <li className="py-6 text-4xl hover:text-sky-400">
+              {user ? (
+                <NavLink onClick={userLogout}>Logout</NavLink>
+              ) : (
+                <NavLink onClick={() => setShowModal(true)}>
+                  Login/Signup
+                </NavLink>
+              )}
+            </li>
+            <li className="py-6 text-4xl hover:text-sky-400">
+              <NavLink to="/leaderboard" onClick={onclick}>
+                Leaderboard
+              </NavLink>
+            </li>
+            <li className="py-6 text-4xl hover:text-sky-400">
+              <NavLink to="/about" onClick={onClick}>
+                About
+              </NavLink>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

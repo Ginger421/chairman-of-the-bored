@@ -20,7 +20,7 @@ const REGISTER_USER = gql`
 
 const RegisterModal = (props) => {
   const context = useContext(AuthContext);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState([]);
   let navigate = useNavigate();
 
   const registerCallback = () => {
@@ -88,7 +88,10 @@ const RegisterModal = (props) => {
                 >
                   Log In
                 </div>
-                <button onClick={onSubmit} className="w-full md:w-auto flex justify-center items-center p-6 space-x-4 font-bold text-white rounded-md px-9 bg-cyan-700 shadow-cyan-100 hover:bg-opacity-90 shadow-sm hover:shadow-lg border transition hover:-translate-y-0.5 duration-150 ">
+                <button
+                  onClick={onSubmit}
+                  className="w-full md:w-auto flex justify-center items-center p-6 space-x-4 font-bold text-white rounded-md px-9 bg-cyan-700 shadow-cyan-100 hover:bg-opacity-90 shadow-sm hover:shadow-lg border transition hover:-translate-y-0.5 duration-150 "
+                >
                   <span>Next</span>
                   <FaHandPointRight />
                 </button>

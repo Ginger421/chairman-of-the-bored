@@ -1,51 +1,57 @@
-import React, { useState } from "react";
-// import { useMutation } from "@apollo/client";
-// import { LOGIN_USER } from "../utils/mutations";
-// import Auth from "../utils/auth";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../context/authContext";
+import { useForm } from "../utils/hooks";
+import { useMutation } from "@apollo/react-hooks";
+import gql from "graphql-tag";
+import { useNavigate } from "react-router-dom";
 import Chairman from "../assets/chairman.png";
 import { FaHandPointRight, FaFacebook, FaWindowClose } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
+const LOGIN_USER = gql`
+ mutation login($loginInput: LoginInput) {
+  loginUser(
+    loginInput: $loginInput
+  ){
+    email
+    username
+    token
+  }
+ }
+`
+
+
+
 const LoginModal = (props) => {
-  // const [loginData, setLoginData] = useState({ email: "", password: "" });
-  // const [validated] = useState(false);
+  let navigate = useNavigate();
+  const context = useContext(AuthContext);
+  const [errors, setErrors] = useState([]);
 
-  // const [login, { error }] = useMutation(LOGIN_USER);
+  const loginCallback = () => {
+    loginUser();
+  }
 
-  // const userInputHandler = (event) => {
-  //   const { name, value } = event.target;
-  //   setLoginData({ ...loginData, [name]: value });
-  // };
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
-  //   try {
-  //     const { data } = await login({
-  //       variables: { ...loginData },
-  //     });
-  //     Auth.login(data.login.token);
-  //   } catch (err) {
-  //     console.error(err);
-  //   }
-  //   setLoginData({
-  //     username: "",
-  //     email: "",
-  //     password: "",
-  //   });
-  // };
+  const { onChange, onSubmit, values } = useForm(loginCallback, {
+    email: '',
+    password: ''
+  });
   
-  // this goes in the form tag below
-// noValidate validated={validated} onSubmit={handleSubmit}
+  const [loginUser, { loading }] = useMutation(LOGIN_USER, {
+    update(proxy, { data: { loginUser: userData } }) {
+      context.login(userData);
+      navigate("/");
+    },
+    onError({ graphQLErrors }) {
+      setErrors(graphQLErrors);
+    },
+    variables: { loginInput: values },
+  });
+
+
   return (
     <div className="z-40">
       <div className="flex items-center justify-center md:z-100 min-h-screen bg-sky-300/60">
-        <form >
+        <form>
           <div className="relative flex flex-col m-6 space-y-10 bg-white shadow-2xl rounded-2xl md:flex-row md:space-y-0 md:m-0">
             {/* left side */}
             <div className="p-6 md-20">
@@ -61,15 +67,13 @@ const LoginModal = (props) => {
                   type="text"
                   className="w-full space-y-4 p-6 border border-gray-300 rounded-md placeholder:font-light "
                   placeholder="Email"
-                  // onChange={userInputHandler}
-                  // value={loginData.email}
+                  onChange={onChange}
                 />
                 <input
                   type="text"
                   className="w-full space-y-4  p-6 border border-gray-300 rounded-md placeholder:font-light "
                   placeholder="Password"
-                  // onChange={userInputHandler}
-                  // value={loginData.password}
+                  onChange={onChange}
                 />
               </div>
 
@@ -81,9 +85,10 @@ const LoginModal = (props) => {
                 >
                   Sign Up
                 </div>
-                {/* this goes in the button below */}
-                {/* disabled={!loginData.email && loginData.password} */}
-                <button className="w-full md:w-auto flex justify-center items-center p-6 space-x-4 font-bold text-white rounded-md px-9 bg-cyan-700 shadow-cyan-100 hover:bg-opacity-90 shadow-sm hover:shadow-lg border transition hover:-translate-y-0.5 duration-150 ">
+                <button
+                  onClick={onSubmit}
+                  className="w-full md:w-auto flex justify-center items-center p-6 space-x-4 font-bold text-white rounded-md px-9 bg-cyan-700 shadow-cyan-100 hover:bg-opacity-90 shadow-sm hover:shadow-lg border transition hover:-translate-y-0.5 duration-150 "
+                >
                   <span>Next</span>
                   <FaHandPointRight />
                 </button>
@@ -107,7 +112,11 @@ const LoginModal = (props) => {
             </div>
 
             {/* right side  */}
-            <img src={Chairman} alt="" className="w-[430px] hidden md:block rounded-2xl" />
+            <img
+              src={Chairman}
+              alt=""
+              className="w-[430px] hidden md:block rounded-2xl"
+            />
             {/* Close button */}
             <div className="group absolute -top-5 right-4 md:top-4 hover:cursor-pointer hover:-translate-y-0.5 transition duration-150">
               <FaWindowClose
