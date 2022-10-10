@@ -31,7 +31,7 @@ I select for a random activity to be generated for me
 GitHub Repo: https://github.com/Ginger421/chairman-of-the-bored/tree/main
 
 ## Contributor Github Links
-- Chris Williams
-- Victor Mendez
-- Liliana Reyes
-- Ginger Owen
+- Chris Williams: https://github.com/deftonechris
+- Victor Mendez: https://github.com/VictorMendez96
+- Liliana Reyes https://github.com/Lreyes4
+- Ginger Owen: https://github.com/Ginger421
