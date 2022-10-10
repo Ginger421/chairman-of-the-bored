@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/authContext";
 import { useForm } from "../utils/hooks";
 import { useMutation } from "@apollo/react-hooks";
-import gql from "graphql-tag";
+import {gql} from "graphql-tag";
 import { useNavigate } from "react-router-dom";
 import { FaHandPointRight, FaFacebook, FaWindowClose } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -64,18 +64,21 @@ const RegisterModal = (props) => {
                   type="text"
                   className="w-full h-2 space-y-4 p-6 border border-gray-300 rounded-md placeholder:font-light "
                   placeholder="Username"
+                  name="username"
                   onChange={onChange}
                 />
                 <input
                   type="text"
                   className="w-full h-2 space-y-4  p-6 border border-gray-300 rounded-md placeholder:font-light "
                   placeholder="Email"
+                  name="email"
                   onChange={onChange}
                 />
                 <input
                   type="text"
                   className="w-full block h-2 space-y-4  p-6 border border-gray-300 rounded-md placeholder:font-light "
                   placeholder="Password"
+                  name="password"
                   onChange={onChange}
                 />
               </div>
@@ -130,11 +133,9 @@ const RegisterModal = (props) => {
           </div>
         </form>
       </div>
-      {/* {errors.map(function(error){
-        return(
-         { error.message}
-        )
-      })} */}
+      {errors.map(function (error) {
+        return error;
+      })}
     </div>
   );
 };

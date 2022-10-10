@@ -2,25 +2,21 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/authContext";
 import { useForm } from "../utils/hooks";
 import { useMutation } from "@apollo/react-hooks";
-import gql from "graphql-tag";
+import { gql } from "graphql-tag";
 import { useNavigate } from "react-router-dom";
 import Chairman from "../assets/chairman.png";
 import { FaHandPointRight, FaFacebook, FaWindowClose } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 const LOGIN_USER = gql`
- mutation login($loginInput: LoginInput) {
-  loginUser(
-    loginInput: $loginInput
-  ){
-    email
-    username
-    token
+  mutation login($loginInput: LoginInput) {
+    loginUser(loginInput: $loginInput) {
+      email
+      username
+      token
+    }
   }
- }
-`
-
-
+`;
 
 const LoginModal = (props) => {
   let navigate = useNavigate();
@@ -29,13 +25,13 @@ const LoginModal = (props) => {
 
   const loginCallback = () => {
     loginUser();
-  }
+  };
 
   const { onChange, onSubmit, values } = useForm(loginCallback, {
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
-  
+
   const [loginUser, { loading }] = useMutation(LOGIN_USER, {
     update(proxy, { data: { loginUser: userData } }) {
       context.login(userData);
@@ -46,7 +42,6 @@ const LoginModal = (props) => {
     },
     variables: { loginInput: values },
   });
-
 
   return (
     <div className="z-40">

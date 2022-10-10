@@ -3,7 +3,7 @@ const { ApolloServer } = require("apollo-server-express");
 const { authMiddleware } = require("./utils/auth");
 const colors = require("colors");
 require("dotenv").config();
-const cors = require("cors");
+
 
 const path = require("path");
 const db = require("./config/connection");
@@ -13,7 +13,7 @@ const { typeDefs, resolvers } = require("./schemas");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-app.use(cors());
+
 
 
 if (process.env.NODE_ENV === "production") {
@@ -29,6 +29,7 @@ const server = new ApolloServer({
   resolvers,
   context: authMiddleware,
 });
+
 
 
 app.use(express.urlencoded({ extended: true }));
