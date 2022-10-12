@@ -27,6 +27,9 @@ I select for a random activity to be generated for me
 ## Application Screenshots
 ![image](https://user-images.githubusercontent.com/101539821/194795484-2bc08084-5537-4e78-ae59-f3933b0b8db9.png)
 
+![image](https://user-images.githubusercontent.com/101539821/195414892-b2d2f0c2-f52b-44f6-b511-97bc84856cf2.png)
+
+
 ## Application Links
 GitHub Repo: https://github.com/Ginger421/chairman-of-the-bored/tree/main
 
