@@ -42,6 +42,7 @@ No testing was done on this application.
 
 ## Application Links
 GitHub Repo: https://github.com/Ginger421/chairman-of-the-bored/tree/main
+
 Deployed site: https://floating-waters-23397.herokuapp.com/
 
 ## Contributor Github Links
