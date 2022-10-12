@@ -2,6 +2,16 @@
 
 This application allows users to have an activity choosen for tham at random. Users create an account and can generate random activities when they are bored. This application saves users completed activities in their profile page. In addition to saving completed activities, a leader boared is generated to track who has completed the most activities.
 
+## Table of Contents
+* [User Story](#user story)
+* [Acceptance Criteria} (#acceptance criteria)
+* [Technologies Used} (#technologies used)
+* [Application Screenshots] (#application screenshots)
+* [Testing](#testing)
+* [Application Links] (#application links)
+* [Contributor Links] (#contributor links)
+* [License](#)
+
 ## User Story
 As a User, bored at home, I would like an activity picked for me at random
 So that I can get myself out of my chair
@@ -27,6 +37,8 @@ I select for a random activity to be generated for me
 
 ![image](https://user-images.githubusercontent.com/101539821/195414892-b2d2f0c2-f52b-44f6-b511-97bc84856cf2.png)
 
+## Testing
+No testing was done on this application.
 
 ## Application Links
 GitHub Repo: https://github.com/Ginger421/chairman-of-the-bored/tree/main
