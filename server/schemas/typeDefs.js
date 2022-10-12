@@ -2,7 +2,6 @@ const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
-    # _id: ID
     username: String
     email: String
     password: String
@@ -13,16 +12,12 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    # confirmPassword: String
   }
   input LoginInput {
     email: String
     password: String
   }
-  type Auth {
-    token: ID!
-    user: User
-  }
+
 
   type Task {
     activity: String
@@ -49,9 +44,9 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    registerUser(registerInput: RegisterInput): Auth
+    registerUser(registerInput: RegisterInput): User
     # this will look at user.token in resolvers.js to see if it is valid
-    loginUser(loginInput: LoginInput ): Auth
+    loginUser(loginInput: LoginInput): User
     saveTask(input: SavedTaskInput): User
     removeTask(key: String!): User
   }

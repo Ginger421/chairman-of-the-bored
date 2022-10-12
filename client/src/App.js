@@ -2,6 +2,7 @@ import React from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
+import { AuthProvider } from "./context/authContext";
 
 // Apollo Client Setup
 import { ApolloProvider } from "@apollo/react-hooks";
@@ -18,7 +19,7 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem("id_token");
+  const token = localStorage.getItem("token");
   return {
     headers: {
       ...headers,
@@ -34,16 +35,18 @@ const client = new ApolloClient({
 
 const App = () => {
   return (
-    <ApolloProvider client={client}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/leaderboard" element={<LeaderBoardPage />} />
-        </Routes>
-      </Router>
-    </ApolloProvider>
+    <AuthProvider>
+      <ApolloProvider client={client}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/leaderboard" element={<LeaderBoardPage />} />
+          </Routes>
+        </Router>
+      </ApolloProvider>
+    </AuthProvider>
   );
 };
 

@@ -38,12 +38,15 @@ const LoginModal = (props) => {
       context.login(userData);
       navigate("/");
     },
+    onCompleted(data) {
+      console.log("onCompleted");
+      navigate("/about");
+    },
     onError({ graphQLErrors }) {
       setErrors(graphQLErrors);
     },
     variables: { loginInput: values },
   });
-
 
   return (
     <div className="z-40">

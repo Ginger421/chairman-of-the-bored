@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import  AuthContext  from "../context/authContext";
+import { AuthContext } from "../context/authContext";
 import { useForm } from "../utils/hooks";
 import { useMutation } from "@apollo/react-hooks";
 import { gql } from "graphql-tag";
@@ -11,9 +11,8 @@ import StartUp from "../assets/startup.png";
 const REGISTER_USER = gql`
   mutation Mutation($registerInput: RegisterInput) {
     registerUser(registerInput: $registerInput) {
-      user {
-        username
-      }
+      email
+      username
       token
     }
   }
@@ -28,32 +27,30 @@ const RegisterModal = (props) => {
     console.log("register callback");
     registerUser();
   };
-  
+
   const { onChange, onSubmit, values } = useForm(registerCallback, {
     username: "",
     email: "",
     password: "",
     // confirmPassword: "",
   });
-  
+
   const [registerUser, { loading }] = useMutation(REGISTER_USER, {
     update(proxy, { data: { registerUser: userData } }) {
+      context.login(userData);
+      navigate("/");
     },
     onCompleted(data) {
       console.log("onCompleted");
       navigate("/about");
-      
-      // context.login(data);
     },
+
     onError({ graphQLErrors }) {
-      if(graphQLErrors) {
-        console.log(graphQLErrors);
-        setErrors(graphQLErrors);
-      }
+      setErrors(graphQLErrors);
     },
     variables: { registerInput: values },
   });
-  
+
   return (
     <div className="z-40">
       <div className="flex items-center justify-center md:z-100 min-h-screen bg-sky-300/60">
@@ -145,7 +142,7 @@ const RegisterModal = (props) => {
         </form>
       </div>
       {errors.map(function (error) {
-        return <div>{error.message}</div>; 
+        return <div>{error.message}</div>;
       })}
     </div>
   );
