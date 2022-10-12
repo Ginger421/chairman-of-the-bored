@@ -39,4 +39,5 @@ Deployed site: https://floating-waters-23397.herokuapp.com/
 - Ginger Owen: https://github.com/Ginger421
 
 ## License
-https://camo.githubusercontent.com/78f47a09877ba9d28da1887a93e5c3bc2efb309c1e910eb21135becd2998238a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4c6963656e73652d4d49542d79656c6c6f772e737667
+![image](https://user-images.githubusercontent.com/101539821/195421059-805de698-7c7b-4c08-9cad-a43288852310.png)
+
