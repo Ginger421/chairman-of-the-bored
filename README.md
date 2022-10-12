@@ -3,7 +3,7 @@
 This application allows users to have an activity choosen for tham at random. Users create an account and can generate random activities when they are bored. This application saves users completed activities in their profile page. In addition to saving completed activities, a leader boared is generated to track who has completed the most activities.
 
 ## Table of Contents
-* [User Story](#user story)
+* [User Story](#user)
 * [Acceptance Criteria} (#acceptance criteria)
 * [Technologies Used} (#technologies used)
 * [Application Screenshots] (#application screenshots)
