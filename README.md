@@ -1,6 +1,6 @@
 # Chairman of the Bored
 
-This application allows users to have an activity choosen for tham at random.
+This application allows users to have an activity choosen for tham at random. Users create an account and can generate random activities when they are bored. This application saves users completed activities in their profile page. In addition to saving completed activities, a leader boared is generated to track who has completed the most activities.
 
 ## User Story
 As a User, bored at home, I would like an activity picked for me at random
@@ -21,8 +21,6 @@ I select for a random activity to be generated for me
 - React
 - Canva
 - Graphql
-
-## Challenges Faced
 
 ## Application Screenshots
 ![image](https://user-images.githubusercontent.com/101539821/194795484-2bc08084-5537-4e78-ae59-f3933b0b8db9.png)
