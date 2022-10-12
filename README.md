@@ -4,12 +4,12 @@ This application allows users to have an activity choosen for tham at random. Us
 
 ## Table of Contents
 * [User Story](#user)
-* [Acceptance Criteria} (#acceptance criteria)
-* [Technologies Used} (#technologies used)
-* [Application Screenshots] (#application screenshots)
+* [Acceptance Criteria} (#acceptance)
+* [Technologies Used} (#technologies)
+* [Screenshots of the Application] (#screenshots)
 * [Testing](#testing)
-* [Application Links] (#application links)
-* [Contributor Links] (#contributor links)
+* [Application Links] (#application)
+* [Contributors] (#contributors)
 * [License](#)
 
 ## User Story
