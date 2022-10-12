@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { AuthContext } from "../context/authContext";
+import React, { useContext, useState, useEffect } from "react";
+import Auth from "../utils/auth";
 import { useForm } from "../utils/hooks";
 import { useMutation } from "@apollo/react-hooks";
 import { gql } from "graphql-tag";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Chairman from "../assets/chairman.png";
 import { FaHandPointRight, FaFacebook, FaWindowClose } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+// import GoogleButton from "./GoogleButton";
 
 const LOGIN_USER = gql`
   mutation login($loginInput: LoginInput) {
@@ -20,7 +21,7 @@ const LOGIN_USER = gql`
 
 const LoginModal = (props) => {
   let navigate = useNavigate();
-  const context = useContext(AuthContext);
+  const context = useContext(Auth);
   const [errors, setErrors] = useState([]);
 
   const loginCallback = () => {
@@ -43,6 +44,7 @@ const LoginModal = (props) => {
     variables: { loginInput: values },
   });
 
+
   return (
     <div className="z-40">
       <div className="flex items-center justify-center md:z-100 min-h-screen bg-sky-300/60">
@@ -62,12 +64,16 @@ const LoginModal = (props) => {
                   type="text"
                   className="w-full space-y-4 p-6 border border-gray-300 rounded-md placeholder:font-light "
                   placeholder="Email"
+                  label="Email"
+                  name="email"
                   onChange={onChange}
                 />
                 <input
                   type="text"
                   className="w-full space-y-4  p-6 border border-gray-300 rounded-md placeholder:font-light "
                   placeholder="Password"
+                  label="Password"
+                  name="password"
                   onChange={onChange}
                 />
               </div>
@@ -99,7 +105,11 @@ const LoginModal = (props) => {
                   <FaFacebook />
                   <span className="font-thin">Facebook</span>
                 </button>
-                <button className="flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition duration-150 md:w-1/2 ">
+                {/* <GoogleButton /> */}
+                <button
+                  id="google-signin"
+                  className="flex items-center justify-center py-2 space-x-3 border border-gray-300 rounded shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition duration-150 md:w-1/2 "
+                >
                   <FcGoogle />
                   <span className="font-thin">Google</span>
                 </button>

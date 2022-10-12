@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../context/authContext";
+import  AuthContext  from "../context/authContext";
 import { useForm } from "../utils/hooks";
 import { useMutation } from "@apollo/react-hooks";
-import {gql} from "graphql-tag";
+import { gql } from "graphql-tag";
 import { useNavigate } from "react-router-dom";
 import { FaHandPointRight, FaFacebook, FaWindowClose } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -11,8 +11,9 @@ import StartUp from "../assets/startup.png";
 const REGISTER_USER = gql`
   mutation Mutation($registerInput: RegisterInput) {
     registerUser(registerInput: $registerInput) {
-      email
-      username
+      user {
+        username
+      }
       token
     }
   }
@@ -27,25 +28,32 @@ const RegisterModal = (props) => {
     console.log("register callback");
     registerUser();
   };
-
+  
   const { onChange, onSubmit, values } = useForm(registerCallback, {
     username: "",
     email: "",
     password: "",
     // confirmPassword: "",
   });
-
+  
   const [registerUser, { loading }] = useMutation(REGISTER_USER, {
     update(proxy, { data: { registerUser: userData } }) {
-      context.login(userData);
-      navigate("/");
+    },
+    onCompleted(data) {
+      console.log("onCompleted");
+      navigate("/about");
+      
+      // context.login(data);
     },
     onError({ graphQLErrors }) {
-      setErrors(graphQLErrors);
+      if(graphQLErrors) {
+        console.log(graphQLErrors);
+        setErrors(graphQLErrors);
+      }
     },
     variables: { registerInput: values },
   });
-
+  
   return (
     <div className="z-40">
       <div className="flex items-center justify-center md:z-100 min-h-screen bg-sky-300/60">
@@ -64,6 +72,7 @@ const RegisterModal = (props) => {
                   type="text"
                   className="w-full h-2 space-y-4 p-6 border border-gray-300 rounded-md placeholder:font-light "
                   placeholder="Username"
+                  label="Username"
                   name="username"
                   onChange={onChange}
                 />
@@ -71,6 +80,7 @@ const RegisterModal = (props) => {
                   type="text"
                   className="w-full h-2 space-y-4  p-6 border border-gray-300 rounded-md placeholder:font-light "
                   placeholder="Email"
+                  label="Email"
                   name="email"
                   onChange={onChange}
                 />
@@ -78,6 +88,7 @@ const RegisterModal = (props) => {
                   type="text"
                   className="w-full block h-2 space-y-4  p-6 border border-gray-300 rounded-md placeholder:font-light "
                   placeholder="Password"
+                  label="Password"
                   name="password"
                   onChange={onChange}
                 />
@@ -134,7 +145,7 @@ const RegisterModal = (props) => {
         </form>
       </div>
       {errors.map(function (error) {
-        return error;
+        return <div>{error.message}</div>; 
       })}
     </div>
   );

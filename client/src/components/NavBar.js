@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { AuthContext } from "../context/authContext";
+import AuthContext from "../utils/contextHelper";
 import { useNavigate } from "react-router-dom";
 import { HiChevronDoubleDown, HiXCircle } from "react-icons/hi";
 import { FcBusinessman } from "react-icons/fc";

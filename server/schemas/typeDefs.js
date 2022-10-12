@@ -6,23 +6,23 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
-    savedTasks: [Task]
+    # savedTasks: [Task]
     token: String
   }
   input RegisterInput {
-    username: String!
-    email: String!
-    password: String!
+    username: String
+    email: String
+    password: String
     # confirmPassword: String
   }
   input LoginInput {
-    email: String!
-    password: String!
+    email: String
+    password: String
   }
-  # type Auth {
-  #   token: ID!
-  #   user: User
-  # }
+  type Auth {
+    token: ID!
+    user: User
+  }
 
   type Task {
     activity: String
@@ -44,13 +44,14 @@ const typeDefs = gql`
   }
   type Query {
     # get user by id and populate savedTasks?
+    users: [User]
     user(id: ID!): User
   }
 
   type Mutation {
-    registerUser(registerInput: RegisterInput): User
+    registerUser(registerInput: RegisterInput): Auth
     # this will look at user.token in resolvers.js to see if it is valid
-    loginUser(loginInput: LoginInput ): User
+    loginUser(loginInput: LoginInput ): Auth
     saveTask(input: SavedTaskInput): User
     removeTask(key: String!): User
   }

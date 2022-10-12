@@ -8,6 +8,7 @@ const resolvers = {
   Mutation: {
     async registerUser(_, { registerInput: { username, email, password } }) {
       //  see if and older user exists with email attempting to register
+      console.log("registerUser");
       const previousUser = await User.findOne({ email });
 
       // Throw error if that user exists
@@ -19,7 +20,7 @@ const resolvers = {
       }
 
       // encrypt password
-      var encryptedPassword = await bcrypt.hash(password, 10);
+      var encryptedPassword = await bcrypt.hash(password, 6);
 
       // build out mongoose model(user)
       const newUser = new User({
@@ -31,7 +32,7 @@ const resolvers = {
       // create JWT token (attach to out user model) the user model in User.js
       const token = jwt.sign(
         { user_id: newUser._id, email },
-        process.env.JWT_SECRET,
+        "this is the secret",
         {
           expiresIn: "2h",
         }
@@ -52,7 +53,7 @@ const resolvers = {
       // create JWT token (attach to out user model) the user model in User.js
       if (user && (await bcrypt.compare(password, user.password))) {
         // create a new JWT token
-        const token = jwt.sign({ user_id: user._id, email }, process.env.JWT_SECRET, {
+        const token = jwt.sign({ user_id: user._id, email }, "this is the secret", {
           expiresIn: "2h",
         });
         // token already exists, 
@@ -73,7 +74,9 @@ const resolvers = {
   },
   //   this is connected to the User.js mongoose model, get user by id
     Query: {
-      user: (_, { ID }) => User.findById(ID),
+
+      user:async (_, { ID }) => await User.findById(ID),
+      users: async () => await User.find(),
     },
 };
 
