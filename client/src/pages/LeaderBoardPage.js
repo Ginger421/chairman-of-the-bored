@@ -1,4 +1,4 @@
-import Reaact from 'react'
+import React from 'react'
 import EveryPageLayout from '../layouts/EveryPage'
 import LeaderBoard from '../components/LeaderBoard'
 
