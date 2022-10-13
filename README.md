@@ -24,11 +24,8 @@ Given I am bored and need something to do,
 I select for a random activity to be generated for me
 
 ## Technologies Used
-- HTML
 - TailWind CSS
-- JavaScript
-- Mongo DB
-- React
+- MERN
 - Canva
 - Graphql
 
