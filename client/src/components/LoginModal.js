@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import Auth from "../utils/auth";
+import { AuthContext } from "../context/authContext";
 import { useForm } from "../utils/hooks";
 import { useMutation } from "@apollo/react-hooks";
 import { gql } from "graphql-tag";
@@ -21,7 +21,7 @@ const LOGIN_USER = gql`
 
 const LoginModal = (props) => {
   let navigate = useNavigate();
-  const context = useContext(Auth);
+  const context = useContext(AuthContext);
   const [errors, setErrors] = useState([]);
 
   const loginCallback = () => {
@@ -40,7 +40,7 @@ const LoginModal = (props) => {
     },
     onCompleted(data) {
       console.log("onCompleted");
-      navigate("/about");
+      navigate("/");
     },
     onError({ graphQLErrors }) {
       setErrors(graphQLErrors);

@@ -58,9 +58,13 @@ const Header = () => {
           </li>
 
           {user ? (
-            <NavLink onClick={userLogout}>Logout</NavLink>
+            <li className="hover:text-sky-400">
+              <NavLink onClick={userLogout}>Logout</NavLink>
+            </li>
           ) : (
-            <NavLink onClick={() => setShowModal(true)}>Login/Signup</NavLink>
+            <li className="hover:text-sky-400">
+              <NavLink onClick={() => setShowModal(true)}>Login/Signup</NavLink>
+            </li>
           )}
 
           <li className="hover:text-sky-400">

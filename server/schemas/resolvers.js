@@ -48,13 +48,16 @@ const resolvers = {
     },
     async loginUser(_, { loginInput: { email, password } }) {
       //    see if user exists with the email
+    
       const user = await User.findOne({ email });
+      console.log(user);
       // check if password matches encrypted password
       // create JWT token (attach to out user model) the user model in User.js
-      if (user && (await bcrypt.compare(password, user.model))) {
+      if (user && (await bcrypt.compare(password, user.password))) {
         // create a new JWT token
+        console.log("passwords match");
         const token = jwt.sign(
-          { user_id: newUser._id, email },
+          { user_id: user._id, email },
           "this is the secret",
           {
             expiresIn: "2h",
@@ -63,7 +66,7 @@ const resolvers = {
         // token already exists,
         user.token = token;
         // Save out user in mongodb
-        // const res = await user.save();
+        const res = await user
         return {
           id: res.id,
           ...res._doc,
