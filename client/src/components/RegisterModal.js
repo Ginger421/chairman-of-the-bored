@@ -42,7 +42,7 @@ const RegisterModal = (props) => {
     },
     onCompleted(data) {
       console.log("onCompleted");
-      navigate("/");
+       window.location.assign("/");
     },
 
     onError({ graphQLErrors }) {

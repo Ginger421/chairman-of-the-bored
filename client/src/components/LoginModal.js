@@ -36,11 +36,11 @@ const LoginModal = (props) => {
   const [loginUser, { loading }] = useMutation(LOGIN_USER, {
     update(proxy, { data: { loginUser: userData } }) {
       context.login(userData);
-      navigate("/");
+      window.location.assign("/");
     },
     onCompleted(data) {
       console.log("onCompleted");
-      navigate("/");
+      window.location.assign("/");
     },
     onError({ graphQLErrors }) {
       setErrors(graphQLErrors);
